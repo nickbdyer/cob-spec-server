@@ -1,9 +1,10 @@
 package uk.nickbdyer.cobspecserver.controllers;
 
-import uk.nickbdyer.cobspecserver.middleware.BasicAuth;
-import uk.nickbdyer.cobspecserver.middleware.Logger;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.controllers.Controller;
+import uk.nickbdyer.httpserver.middleware.BasicAuth;
+import uk.nickbdyer.httpserver.middleware.Logger;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import java.util.HashMap;
 import java.util.stream.Collectors;

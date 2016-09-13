@@ -1,7 +1,8 @@
 package uk.nickbdyer.cobspecserver.controllers;
 
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.controllers.Controller;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import java.io.File;
 import java.util.Arrays;

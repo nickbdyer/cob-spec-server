@@ -20,9 +20,13 @@ run {
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
+    compile name: 'http-server'
     compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
     testCompile 'junit:junit:4.12'
 
