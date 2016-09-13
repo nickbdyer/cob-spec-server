@@ -19,6 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cob-spec-server_main" target="1.8" />
+      <module name="cob-spec-server_test" target="1.8" />
       <module name="http-server_main" target="1.8" />
       <module name="http-server_test" target="1.8" />
     </bytecodeTargetLevel>
