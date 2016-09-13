@@ -3,16 +3,16 @@ package uk.nickbdyer.cobspecserver.controllers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
-import static uk.nickbdyer.cobspecserver.requests.Method.GET;
-import static uk.nickbdyer.cobspecserver.requests.Method.HEAD;
+import static uk.nickbdyer.httpserver.requests.Method.GET;
+import static uk.nickbdyer.httpserver.requests.Method.HEAD;
 
 public class RootControllerTest {
 

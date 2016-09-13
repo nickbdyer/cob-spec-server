@@ -2,11 +2,11 @@ package uk.nickbdyer.cobspecserver.controllers;
 
 import org.junit.Before;
 import org.junit.Test;
-import uk.nickbdyer.cobspecserver.middleware.BasicAuth;
-import uk.nickbdyer.cobspecserver.middleware.Logger;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.requests.RequestLine;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.middleware.BasicAuth;
+import uk.nickbdyer.httpserver.middleware.Logger;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.requests.RequestLine;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import java.util.Base64;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
-import static uk.nickbdyer.cobspecserver.requests.Method.GET;
+import static uk.nickbdyer.httpserver.requests.Method.GET;
 
 public class LogsControllerTest {
 

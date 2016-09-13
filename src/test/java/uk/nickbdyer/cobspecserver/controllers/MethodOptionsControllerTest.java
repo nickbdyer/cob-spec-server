@@ -1,14 +1,12 @@
 package uk.nickbdyer.cobspecserver.controllers;
 
 import org.junit.Test;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import static org.hamcrest.core.StringContains.containsString;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static uk.nickbdyer.cobspecserver.requests.Method.*;
+import static org.junit.Assert.*;
+import static uk.nickbdyer.httpserver.requests.Method.*;
 
 public class MethodOptionsControllerTest {
 

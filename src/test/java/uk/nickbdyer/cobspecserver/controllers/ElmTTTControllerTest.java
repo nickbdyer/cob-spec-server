@@ -3,14 +3,14 @@ package uk.nickbdyer.cobspecserver.controllers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import uk.nickbdyer.cobspecserver.filemanager.FileFinder;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.filemanager.FileFinder;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
-import static uk.nickbdyer.cobspecserver.requests.Method.GET;
+import static uk.nickbdyer.httpserver.requests.Method.GET;
 
 public class ElmTTTControllerTest {
 

@@ -1,13 +1,13 @@
 package uk.nickbdyer.cobspecserver.controllers;
 
 import org.junit.Test;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static uk.nickbdyer.cobspecserver.requests.Method.GET;
+import static uk.nickbdyer.httpserver.requests.Method.GET;
 
 public class CoffeeControllerTest {
 

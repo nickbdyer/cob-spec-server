@@ -1,15 +1,15 @@
 package uk.nickbdyer.cobspecserver.controllers;
 
 import org.junit.Test;
-import uk.nickbdyer.cobspecserver.requests.Request;
-import uk.nickbdyer.cobspecserver.requests.RequestLine;
-import uk.nickbdyer.cobspecserver.responses.Response;
+import uk.nickbdyer.httpserver.requests.Request;
+import uk.nickbdyer.httpserver.requests.RequestLine;
+import uk.nickbdyer.httpserver.responses.Response;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static uk.nickbdyer.cobspecserver.requests.Method.GET;
+import static uk.nickbdyer.httpserver.requests.Method.GET;
 
 public class ParameterControllerTest {
 
