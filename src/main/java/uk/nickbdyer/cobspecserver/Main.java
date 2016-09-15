@@ -1,11 +1,12 @@
 package uk.nickbdyer.cobspecserver;
 
 import uk.nickbdyer.cobspecserver.controllers.*;
+import uk.nickbdyer.httpserver.HttpServer;
 import uk.nickbdyer.httpserver.filemanager.FileFinder;
 import uk.nickbdyer.httpserver.middleware.BasicAuth;
 import uk.nickbdyer.httpserver.middleware.Logger;
-import uk.nickbdyer.httpserver.HttpServer;
-import uk.nickbdyer.httpserver.Router;
+import uk.nickbdyer.httpserver.middleware.MiddlewareStack;
+import uk.nickbdyer.httpserver.middleware.Router;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,10 +20,9 @@ public class Main {
         Arguments arguments = new Arguments(args);
         File publicFolder = new File(arguments.getDirectoryPath());
         FileFinder fileFinder = new FileFinder(publicFolder);
-        ExecutorService executorService = Executors.newFixedThreadPool(4);
 
         BasicAuth basicAuth = new BasicAuth();
-        basicAuth.addAuthorisedUser("admin", "hunter2");
+        basicAuth.addAuthorisedUser("/logs", "admin", "hunter2");
 
         Logger logger = new Logger();
 
@@ -36,10 +36,16 @@ public class Main {
         router.addController("/method_options2", new MethodOptions2Controller());
         router.addController("/coffee", new CoffeeController());
         router.addController("/tea", new TeaController());
-        router.addController("/logs", new LogsController(basicAuth, logger));
+        router.addController("/logs", new LogsController(logger));
         router.addController("/elmttt", new ElmTTTController(fileFinder));
 
-        new HttpServer(executorService, new ServerSocket(arguments.getPort()), router, logger).listen();
+        MiddlewareStack middlewareStack = new MiddlewareStack();
+        middlewareStack.add(logger);
+        middlewareStack.add(basicAuth);
+        middlewareStack.add(router);
+
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        new HttpServer(executorService, new ServerSocket(arguments.getPort()), middlewareStack, logger).listen();
     }
 
 }
